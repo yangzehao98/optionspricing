@@ -95,6 +95,7 @@ To add new models or methods:
 | Pricer   | `IPricer`              |
 
 Then wire them up in `MCBuilder`.
+
 ---
 
 ## Customizing the Pricer
