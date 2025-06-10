@@ -84,7 +84,7 @@ Time elapsed: 0.14s
 
 ---
 
-## 🧩 Customizing the Pricer
+## Customizing the Pricer
 
 By default, the framework uses a `EuropeanPricer` to process each Monte Carlo path.  
 If you'd like to switch to a different pricer (e.g., `AsianPricer`, `BarrierPricer`, or `BrownianBridgePricer`), you can modify the `InitializePricer` function inside `MCBuilder.hpp`:
