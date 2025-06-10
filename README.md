@@ -84,6 +84,39 @@ Time elapsed: 0.14s
 
 ---
 
+## 🧩 Customizing the Pricer
+
+By default, the framework uses a `EuropeanPricer` to process each Monte Carlo path.  
+If you'd like to switch to a different pricer (e.g., `AsianPricer`, `BarrierPricer`, or `BrownianBridgePricer`), you can modify the `InitializePricer` function inside `MCBuilder.hpp`:
+
+```cpp
+std::shared_ptr<IPricer> InitializePricer(Payoff payoff, Discounter discounter)
+{
+    // Currently uses EuropeanPricer by default
+    std::shared_ptr<IPricer> op = std::make_shared<EuropeanPricer>(payoff, discounter);
+
+    // To switch to Asian option pricing:
+    // std::shared_ptr<IPricer> op = std::make_shared<AsianPricer>(payoff, discounter);
+
+    // To switch to barrier pricing:
+    // std::shared_ptr<IPricer> op = std::make_shared<BarrierPricer>(payoff, discounter);
+
+    // To use Brownian Bridge based barrier pricer:
+    // std::shared_ptr<IPricer> op = std::make_shared<BrownianBridgePricer>(payoff, discounter, sde, stepSize);
+
+    f1 = [op](const std::vector<double>& path) {
+        op->ProcessPath(path);
+    };
+
+    f2 = [op]() {
+        op->PostProcess();
+    };
+
+    return op;
+}
+
+---
+
 ## Extensibility
 
 To add new models or methods:
