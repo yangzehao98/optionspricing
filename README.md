@@ -83,6 +83,19 @@ Time elapsed: 0.14s
 - Easy to extend for other stochastic models or option types
 
 ---
+## Extensibility
+
+To add new models or methods:
+
+| Component | Extend This Class      |
+|----------|------------------------|
+| SDE      | `ISde`                 |
+| FDM      | `FdmBase`              |
+| RNG      | `IRng`                 |
+| Pricer   | `IPricer`              |
+
+Then wire them up in `MCBuilder`.
+---
 
 ## Customizing the Pricer
 
@@ -114,21 +127,6 @@ std::shared_ptr<IPricer> InitializePricer(Payoff payoff, Discounter discounter)
 
     return op;
 }
-
----
-
-## Extensibility
-
-To add new models or methods:
-
-| Component | Extend This Class      |
-|----------|------------------------|
-| SDE      | `ISde`                 |
-| FDM      | `FdmBase`              |
-| RNG      | `IRng`                 |
-| Pricer   | `IPricer`              |
-
-Then wire them up in `MCBuilder`.
 
 ---
 
