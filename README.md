@@ -1,4 +1,4 @@
-# Monte Carlo Option Pricing (C++)
+# Monte Carlo Options Pricing (C++)
 
 ## Overview
 
