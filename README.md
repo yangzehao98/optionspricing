@@ -30,14 +30,6 @@ This project implements a modular and extensible **Monte Carlo simulation framew
 - C++11/14/17 or later
 - Boost (for Signals2)
 
-### Compile (example using g++):
-
-```bash
-g++ -std=c++17 Main.cpp -o MonteCarloOptionPricing -lboost_signals
-```
-
-> Make sure to link Boost.Signals2 and include the proper headers.
-
 ---
 
 ## How to Run
