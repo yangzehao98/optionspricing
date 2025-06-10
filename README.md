@@ -43,7 +43,7 @@ g++ -std=c++17 Main.cpp -o MonteCarloOptionPricing -lboost_signals
 ## How to Run
 
 ```bash
-./MonteCarloOptionPricing
+./OptionsPricing/OptionsPricing/Test.cpp
 ```
 
 ### Sample interaction:
